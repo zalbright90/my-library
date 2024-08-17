@@ -7,9 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="input-section"></div>
-        <input type="text" id="title" placeholder="Book Title">
-        <input type="text" id="author" placeholder="Author">
+    <h1>An Interactive Library</h1>
+    <button id="newBookBtn">New Book</button>
+    <div id="library"></div>
+
+    <dialog id="bookDialog">
+        <form id="bookForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            
+            <label for="author">Author:</label>
+            <input type="text" id="author" required>
+
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" min="1" max="4000" required>
+            
+            <label for="read">Read:</label>
+            <input type="checkbox" id="read">
+        
+            <button type="submit">Add Book</button>
+        </form>
+    </dialog>
+
     <script src="books.js"></script>
 </body>
 </html>

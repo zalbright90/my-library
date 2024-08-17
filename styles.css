@@ -1,0 +1,143 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0e6d2;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #5d4037;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#newBookBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #795548;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newBookBtn:hover {
+    background-color: #5d4037;
+}
+
+#library {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.shelf {
+    background-color: #8d6e63;
+    height: 220px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.book {
+    width: 40px;
+    height: 200px;
+    margin-right: 10px;
+    background-color: #4caf50;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.book:hover {
+    transform: translateY(-10px);
+}
+
+.book-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+    font-size: 0.9em;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.book-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.book-details h2 {
+    color: #5d4037;
+    margin-top: 0;
+}
+
+.book-details button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #795548;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-details button:hover {
+    background-color: #5d4037;
+}
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #795548;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #5d4037;
+}
