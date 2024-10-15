@@ -125,15 +125,77 @@ newBookBtn.addEventListener('click', () => {
     bookDialog.showModal();
 });
 
+function validateForm() {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const pages = document.getElementById('pages');
+
+    let isValid = true;
+
+    if (title.ariaValueMax.trim() === '') {
+        setErrorFor(title, 'Title cannot be blank');
+        isValid = false;
+    } else {
+        setSuccessFor(title);
+    }
+
+    if (author.value.trim() === '') {
+        setErrorFor(author, 'Author cannot be blank');
+        isValid = false;
+    } else {
+        setSuccessFor(author);
+    }
+
+    if (pages.value.trim() === '') {
+        setErrorFor(pages, 'Number of pages cannot be blank');
+        isValid = false;
+    } else if (isNaN(pages.value) || parseInt(pages.value) <= 0) {
+        setErrorFor(pages, 'Please enter a valid number of pages');
+    } else {
+        setSuccessFor(pages);
+    }
+
+    return isValid;
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const errorDisplay = formControl.querySelector('.error-message');
+
+    errorDisplay.innerText = message;
+    formControl.classList.add('error');
+    formControl.classList.remove('success');
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    const errorDisplay = formControl.querySelector('.error-message');
+
+    errorDisplay.innerText = '';
+    formControl.classList.add('success');
+    formControl.classList.remove('error');
+}
+
 bookForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const pages = document.getElementById('pages').value;
-    const read = document.getElementById('read').checked;
-    addBookToLibrary(title, author, pages, read);
-    bookForm.reset();
-    bookDialog.close();
+
+    if (validateForm()) {
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const pages = document.getElementById('pages').value;
+        const read = document.getElementById('read').checked;
+
+        addBookToLibrary(title, author, pages, read);
+        bookForm.reset();
+        bookDialog.close();
+    }
+});
+
+const formInputs = bookForm.querySelectorAll('input:not([type="checkbox"])');
+formInputs.forEach(input => {
+    input.addEventListener('blur', () => {
+        validateForm();
+    });
 });
 
 addBookToLibrary('The Poetic Edda', 'Lee M. Hollander', 323, true);
