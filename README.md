@@ -11,6 +11,7 @@ An interactive virtual library built with HTML, CSS, and JS. This project allows
 - Toggle read status for each book
 - Remove books from the library
 - Responsive design for various screen sizes
+- Client-side validation using JS when adding new books
 
 ## Usage
 
