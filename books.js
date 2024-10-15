@@ -136,5 +136,11 @@ bookForm.addEventListener('submit', (e) => {
     bookDialog.close();
 });
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, true);
-addBookToLibrary('To Kill a Mockingbird', 'Harper Lee', 281, false);
+addBookToLibrary('The Poetic Edda', 'Lee M. Hollander', 323, true);
+addBookToLibrary('EDDA', 'Snorri Sturluson', 220, true);
+addBookToLibrary('Heimskringla', 'Snorri Sturluson', 821, false);
+addBookToLibrary('The Kalevala', 'Elias Lönnrot', 666, true);
+addBookToLibrary('The Nordic Animist Year', 'Rune Hjarnø Rasmussen', 146, true);
+addBookToLibrary('RUNES', 'Michael P. Barnes', 240, true);
+addBookToLibrary('The Sagas of Icelanders', 740, true);
+addBookToLibrary('Our Fathers Godsaga', 'Viktor Rydberg', 166, true);
