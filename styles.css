@@ -173,7 +173,33 @@ dialog {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8em;
+    height: 20px;
+    margin-top: 5px;
 }
 
 form input[type="text"],

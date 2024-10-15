@@ -132,7 +132,7 @@ function validateForm() {
 
     let isValid = true;
 
-    if (title.ariaValueMax.trim() === '') {
+    if (title.value.trim() === '') {
         setErrorFor(title, 'Title cannot be blank');
         isValid = false;
     } else {
